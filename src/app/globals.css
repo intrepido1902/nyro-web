@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
+@theme {
+  --color-bg-base: #070810;
+  --color-bg-elevated: #0C0E1C;
+  --color-bg-surface: #11142A;
+
+  --color-accent: #4A7EFF;
+  --color-accent-light: #7AA3FF;
+
+  --color-text-primary: #EEF0FF;
+  --color-text-secondary: #7A84AA;
+  --color-text-muted: #3D4460;
+
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-accent: rgba(74, 126, 255, 0.18);
+
+  --font-sans: 'DM Sans', sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-base: #070810;
+  --bg-elevated: #0C0E1C;
+  --bg-surface: #11142A;
+  --accent: #4A7EFF;
+  --accent-light: #7AA3FF;
+  --text-primary: #EEF0FF;
+  --text-secondary: #7A84AA;
+  --text-muted: #3D4460;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-accent: rgba(74, 126, 255, 0.18);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(74, 126, 255, 0.25);
+  color: #EEF0FF;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070810;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 126, 255, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 126, 255, 0.4);
+}
+
+/* ── Typography Scale — NYRO Premium ── */
+h1, .nyro-h1 {
+  font-size: clamp(32px, 4vw, 52px) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.025em !important;
+}
+
+h2, .nyro-h2 {
+  font-size: clamp(26px, 3vw, 42px) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Exception: hero headline can be larger */
+.hero-headline {
+  font-size: clamp(36px, 4.5vw, 58px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* ── Section transitions ── */
+.section-transition-top {
+  position: relative;
+}
+.section-transition-top::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(180deg, #070810 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.section-transition-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(0deg, #070810 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
 }

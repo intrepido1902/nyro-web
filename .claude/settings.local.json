@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Set-Location \"c:\\\\Users\\\\rayoj\\\\Desktop\\\\nyro-web\"; $job = Start-Job { Set-Location \"c:\\\\Users\\\\rayoj\\\\Desktop\\\\nyro-web\"; npm run dev 2>&1 }; Start-Sleep -Seconds 12; $out = Receive-Job $job; Stop-Job $job; Remove-Job $job; $out)",
+      "Bash(npx next *)"
+    ]
+  }
+}

@@ -256,7 +256,7 @@ export default function NosotrosSection() {
                   flexShrink: 0,
                 }}>
                   <Image
-                    src="/foto-fundador.jpeg"
+                    src="/images/foto-fundador.jpeg"
                     alt="Santiago Rayo — Founder & CEO, NYRO Systems"
                     fill
                     style={{ objectFit: 'cover', objectPosition: 'center top' }}

@@ -1,15 +1,14 @@
 'use client';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Server, Database, Zap, TrendingUp } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 import { SERVICES } from '@/content/data';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 
-const ICONS: Record<string, LucideIcon> = {
-  Server,
-  Database,
-  Zap,
-  TrendingUp,
+const SERVICE_IMAGES: Record<string, string> = {
+  Server: '/images/icon-infraestructura.png',
+  Database: '/images/icon-database.png',
+  Zap: '/images/icon-automatizacion.png',
+  TrendingUp: '/images/icon-analytics.png',
 };
 
 const CARD_VARIANTS = {
@@ -88,7 +87,6 @@ export function Services() {
           }}
         >
           {SERVICES.map((service) => {
-            const Icon = ICONS[service.icon] ?? Server;
             return (
               <motion.div
                 key={service.num}
@@ -135,19 +133,24 @@ export function Services() {
                   </span>
 
                   {/* Icon */}
-                  <div
-                    style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 10,
-                      background: 'rgba(74,126,255,0.08)',
-                      border: '1px solid rgba(74,126,255,0.18)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <Icon size={20} color="#4A7EFF" strokeWidth={1.5} />
+                  <div style={{
+                    width: 72,
+                    height: 72,
+                    position: 'relative',
+                    marginBottom: '0.5rem',
+                  }}>
+                    <Image
+                      src={SERVICE_IMAGES[service.icon] ?? '/images/icon-infraestructura.png'}
+                      alt={service.title}
+                      width={72}
+                      height={72}
+                      style={{
+                        width: 72,
+                        height: 72,
+                        objectFit: 'contain',
+                        filter: 'drop-shadow(0 0 12px rgba(74,126,255,0.3))',
+                      }}
+                    />
                   </div>
 
                   {/* Title */}

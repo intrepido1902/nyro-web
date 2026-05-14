@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { HERO_STATS } from '@/content/data';
 import { WHATSAPP_LINKS } from '@/lib/whatsapp';
@@ -342,103 +343,40 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* ── Right column — Isometric SVG ── */}
+          {/* ── Right column — Hero image ── */}
           <div className="hidden md:flex relative justify-center items-center">
-            <div className="nyro-float">
-              <svg
-                viewBox="0 0 460 380"
-                width="100%"
-                style={{ maxWidth: 500 }}
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <filter id="glow-sm" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
-                    <feMerge>
-                      <feMergeNode in="coloredBlur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                  <filter id="glow-md" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="5" result="coloredBlur" />
-                    <feMerge>
-                      <feMergeNode in="coloredBlur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                  <filter id="glow-lg" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="10" result="coloredBlur" />
-                    <feMerge>
-                      <feMergeNode in="coloredBlur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
-
-                {/* Cubos back → front */}
-                <IsoCube cx={330} cy={130} w={90}  h={55}  opacity={0.65} />
-                <IsoCube cx={130} cy={145} w={100} h={65}  opacity={0.70} />
-                <IsoCube cx={230} cy={80}  w={150} h={135} opacity={1.00} />
-                <IsoCube cx={140} cy={250} w={80}  h={40}  opacity={0.55} />
-                <IsoCube cx={325} cy={235} w={75}  h={38}  opacity={0.50} />
-
-                {/* N glyph on main cube */}
-                <text
-                  x="230"
-                  y="178"
-                  textAnchor="middle"
-                  fontFamily="Syne,sans-serif"
-                  fontSize="40"
-                  fontWeight="800"
-                  fill="#4A7EFF"
-                  opacity="0.9"
-                  filter="url(#glow-md)"
-                >
-                  N
-                </text>
-
-                {/* Glow ellipses at base */}
-                <ellipse
-                  cx={230} cy={310} rx={170} ry={18}
-                  fill="none"
-                  stroke="#4A7EFF" strokeWidth={1.5} opacity={0.4}
-                  filter="url(#glow-md)"
-                />
-                <ellipse
-                  cx={230} cy={310} rx={90} ry={9}
-                  fill="rgba(74,126,255,0.05)"
-                />
-
-                {/* Particles */}
-                {PARTICLES.map((p, i) => (
-                  <circle
-                    key={i}
-                    cx={p.x} cy={p.y} r={2}
-                    fill="#4A7EFF" fillOpacity={p.o}
-                    filter="url(#glow-sm)"
-                  />
-                ))}
-              </svg>
-            </div>
-
-            {/* Radial glow below SVG */}
-            <div
-              className="nyro-glow-pulse"
-              aria-hidden="true"
-              style={{
+            <div style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: 520,
+              animation: 'nyro-float 6s ease-in-out infinite',
+            }}>
+              <Image
+                src="/images/hero-visual.png"
+                alt="NYRO Systems — Infraestructura tecnológica"
+                width={520}
+                height={420}
+                priority
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 0 40px rgba(74,126,255,0.25))',
+                }}
+              />
+              <div style={{
                 position: 'absolute',
-                bottom: '8%',
+                bottom: '-10%',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 width: 280,
-                height: 70,
+                height: 60,
                 borderRadius: '50%',
-                background:
-                  'radial-gradient(ellipse, rgba(74,126,255,0.2) 0%, transparent 70%)',
+                background: 'radial-gradient(ellipse, rgba(74,126,255,0.2) 0%, transparent 70%)',
+                animation: 'nyro-glow-pulse 3s ease-in-out infinite',
                 pointerEvents: 'none',
-              }}
-            />
+              }} />
+            </div>
           </div>
         </div>
       </section>

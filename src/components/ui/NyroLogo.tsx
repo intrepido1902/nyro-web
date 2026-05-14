@@ -14,7 +14,7 @@ function NyroLogo({ size = 32, showText = true }: NyroLogoProps) {
       userSelect: 'none',
     }}>
       <Image
-        src="/nyro-logo.png"
+        src="/images/nyro-logo.png"
         alt="NYRO Systems"
         width={140}
         height={46}

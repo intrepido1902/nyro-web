@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { Target, Eye, Zap } from 'lucide-react'
 import { WHATSAPP_LINKS } from '@/lib/whatsapp'
 import AnimateOnScroll from '@/components/motion/AnimateOnScroll'
@@ -238,44 +239,51 @@ export default function NosotrosSection() {
 
             {/* Right — avatar */}
             <AnimateOnScroll direction="right">
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div
-                  style={{
-                    width: 160,
-                    height: 160,
-                    borderRadius: 16,
-                    background: 'linear-gradient(135deg, #0C0E1C 0%, #11142A 100%)',
-                    border: '1px solid rgba(74,126,255,0.2)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <svg width={64} height={64} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="7" fill="rgba(74,126,255,0.12)" stroke="rgba(74,126,255,0.35)" strokeWidth="0.75" />
-                    <line x1="9" y1="22" x2="9" y2="10" stroke="#4A7EFF" strokeWidth="2.5" strokeLinecap="round"/>
-                    <line x1="9" y1="10" x2="23" y2="22" stroke="#4A7EFF" strokeWidth="2.5" strokeLinecap="round"/>
-                    <line x1="23" y1="10" x2="23" y2="22" stroke="#4A7EFF" strokeWidth="2.5" strokeLinecap="round"/>
-                  </svg>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1rem',
+                flexShrink: 0,
+              }}>
+                <div style={{
+                  width: 200,
+                  height: 200,
+                  borderRadius: 16,
+                  overflow: 'hidden',
+                  border: '1px solid rgba(74,126,255,0.2)',
+                  position: 'relative',
+                  flexShrink: 0,
+                }}>
+                  <Image
+                    src="/foto-fundador.jpeg"
+                    alt="Santiago Rayo — Founder & CEO, NYRO Systems"
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                    sizes="200px"
+                  />
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginTop: '1rem', alignItems: 'center' }}>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 4,
+                }}>
                   <span style={{
                     fontFamily: 'var(--font-syne)',
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: 700,
                     color: '#EEF0FF',
-                  }}>
-                    Santiago Rayo
-                  </span>
+                    textAlign: 'center',
+                  }}>Santiago Rayo</span>
                   <span style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: 11,
                     color: '#4A7EFF',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                  }}>
-                    Founder & CEO
-                  </span>
+                    letterSpacing: '0.1em',
+                    textAlign: 'center',
+                  }}>Founder & CEO</span>
                 </div>
               </div>
             </AnimateOnScroll>

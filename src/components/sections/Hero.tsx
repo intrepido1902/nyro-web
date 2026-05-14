@@ -361,15 +361,15 @@ export function Hero() {
                   width: '100%',
                   height: 'auto',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 40px rgba(74,126,255,0.25))',
+                  filter: 'drop-shadow(0 0 60px rgba(74,126,255,0.3))',
                 }}
               />
               <div style={{
                 position: 'absolute',
-                bottom: '-10%',
+                bottom: '-8%',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                width: 280,
+                width: 300,
                 height: 60,
                 borderRadius: '50%',
                 background: 'radial-gradient(ellipse, rgba(74,126,255,0.2) 0%, transparent 70%)',

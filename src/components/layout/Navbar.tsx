@@ -57,7 +57,7 @@ export function Navbar() {
           justifyContent: 'space-between',
         }}
       >
-        <Link href="/" aria-label="NYRO Systems — inicio">
+        <Link href="/" aria-label="NYRO Systems — inicio" style={{ textDecoration: 'none' }}>
           <NyroLogo size={32} />
         </Link>
 

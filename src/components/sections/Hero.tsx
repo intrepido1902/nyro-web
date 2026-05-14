@@ -102,8 +102,9 @@ export function Hero() {
           alignItems: 'center',
           position: 'relative',
           overflow: 'hidden',
+          overflowX: 'hidden',
           background: '#070810',
-          padding: '80px 2rem 60px',
+          padding: '80px 1.25rem 60px',
         }}
       >
         {/* Grid background */}
@@ -150,6 +151,7 @@ export function Hero() {
             maxWidth: 1200,
             margin: '0 auto',
             width: '100%',
+            minWidth: 0,
             gap: '4rem',
             alignItems: 'center',
             position: 'relative',
@@ -185,13 +187,15 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
               style={{
                 fontFamily: 'var(--font-syne)',
-                fontSize: 'clamp(34px, 3.8vw, 52px)',
+                fontSize: 'clamp(28px, 7vw, 52px)',
                 fontWeight: 800,
                 lineHeight: 1.1,
                 letterSpacing: '-0.03em',
                 color: '#EEF0FF',
                 margin: 0,
                 marginBottom: '1.5rem',
+                wordBreak: 'break-word',
+                overflowWrap: 'break-word',
               }}
             >
               Transformamos empresas que operan en el caos en máquinas digitales que{' '}
@@ -217,9 +221,10 @@ export function Hero() {
                 fontWeight: 300,
                 color: '#7A84AA',
                 lineHeight: 1.7,
-                maxWidth: 440,
+                maxWidth: '100%',
                 margin: 0,
                 marginBottom: '2rem',
+                wordBreak: 'break-word',
               }}
             >
               Construimos tu web, organizamos tu información y automatizamos tus
@@ -231,12 +236,24 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4, ease: EASE }}
-              style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}
+              style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', width: '100%' }}
             >
-              <a href={WHATSAPP_LINKS.llamada} target="_blank" rel="noopener noreferrer" className="nyro-btn-primary">
+              <a
+                href={WHATSAPP_LINKS.llamada}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nyro-btn-primary"
+                style={{ width: '100%', maxWidth: '320px', textAlign: 'center' as const, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              >
                 Quiero digitalizar mi empresa →
               </a>
-              <a href={WHATSAPP_LINKS.servicios} target="_blank" rel="noopener noreferrer" className="nyro-btn-ghost">
+              <a
+                href={WHATSAPP_LINKS.servicios}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nyro-btn-ghost"
+                style={{ width: '100%', maxWidth: '320px', textAlign: 'center' as const, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              >
                 Ver cómo lo hacemos
               </a>
             </motion.div>
@@ -247,7 +264,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.45, ease: EASE }}
-              style={{ display: 'flex', gap: '2rem', marginTop: '1.5rem', flexWrap: 'wrap' }}
+              style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', flexWrap: 'wrap' }}
             >
               {HERO_STATS.map((stat, i) => (
                 <React.Fragment key={stat.number + i}>
@@ -266,7 +283,7 @@ export function Hero() {
                     <span
                       style={{
                         fontFamily: 'var(--font-syne)',
-                        fontSize: 26,
+                        fontSize: 'clamp(20px, 5vw, 26px)',
                         fontWeight: 800,
                         color: '#EEF0FF',
                         lineHeight: 1,
@@ -316,6 +333,8 @@ export function Hero() {
                   fontFamily: 'var(--font-mono)',
                   fontSize: 11,
                   color: '#3D4460',
+                  whiteSpace: 'normal' as const,
+                  wordBreak: 'break-word' as const,
                 }}
               >
                 Operamos en Colombia 🇨🇴 · Ya transformamos empresas como la tuya.

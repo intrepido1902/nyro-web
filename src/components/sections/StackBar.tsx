@@ -18,6 +18,9 @@ export function StackBar() {
         borderTop: '1px solid rgba(255,255,255,0.06)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: '1.5rem 2rem',
+        background: '#070810',
+        position: 'relative',
+        zIndex: 2,
       }}
     >
       <div
@@ -52,7 +55,7 @@ export function StackBar() {
           }}
         />
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+        <div className="nyro-stack-logos" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
           {STACK_ITEMS.map((item) => (
             <motion.div
               key={item.label}

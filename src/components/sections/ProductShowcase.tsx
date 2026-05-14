@@ -18,7 +18,7 @@ export default function ProductShowcase() {
             }}>Lo que construimos</span>
             <h2 style={{
               fontFamily: 'var(--font-syne)',
-              fontSize: 'clamp(28px, 3.5vw, 44px)',
+              fontSize: 'clamp(22px, 5vw, 44px)',
               fontWeight: 800, color: '#EEF0FF',
               lineHeight: 1.1, letterSpacing: '-0.025em',
               marginBottom: '1rem'
@@ -41,7 +41,7 @@ export default function ProductShowcase() {
           background: '#070810',
           display: 'flex',
           flexDirection: 'column',
-          padding: '1.5rem'
+          padding: 'clamp(0.75rem, 3vw, 1.5rem)'
         }}>
           <div style={{
             display: 'flex', alignItems: 'center', gap: '8px',

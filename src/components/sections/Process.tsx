@@ -70,7 +70,7 @@ export function Process() {
 
         {/* 4-col grid with stagger */}
         <StaggerContainer
-          className="grid sm:grid-cols-2 lg:grid-cols-4"
+          className="nyro-process-grid grid sm:grid-cols-2 lg:grid-cols-4"
           style={{
             gap: '1px',
             background: 'rgba(255,255,255,0.06)',

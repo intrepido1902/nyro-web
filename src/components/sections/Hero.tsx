@@ -188,14 +188,14 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
               style={{
                 fontFamily: 'var(--font-syne)',
-                fontSize: 'clamp(28px, 7vw, 52px)',
+                fontSize: 'clamp(26px, 4.5vw, 52px)',
                 fontWeight: 800,
                 lineHeight: 1.1,
                 letterSpacing: '-0.03em',
                 color: '#EEF0FF',
                 margin: 0,
                 marginBottom: '1.5rem',
-                wordBreak: 'break-word',
+                wordBreak: 'keep-all' as const,
                 overflowWrap: 'break-word',
               }}
             >
@@ -361,7 +361,8 @@ export function Hero() {
                   width: '100%',
                   height: 'auto',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 60px rgba(74,126,255,0.3))',
+                  filter: 'drop-shadow(0 0 40px rgba(74,126,255,0.25))',
+                  mixBlendMode: 'lighten' as const,
                 }}
               />
               <div style={{

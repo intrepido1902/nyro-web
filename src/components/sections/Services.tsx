@@ -134,21 +134,22 @@ export function Services() {
 
                   {/* Icon */}
                   <div style={{
-                    width: 80,
-                    height: 80,
+                    width: 72,
+                    height: 72,
                     position: 'relative',
-                    marginBottom: '0.25rem',
+                    marginBottom: '0.5rem',
                   }}>
                     <Image
                       src={SERVICE_IMAGES[service.icon] ?? '/images/icon-infraestructura.png'}
                       alt={service.title}
-                      width={80}
-                      height={80}
+                      width={72}
+                      height={72}
                       style={{
-                        width: 80,
-                        height: 80,
+                        width: 72,
+                        height: 72,
                         objectFit: 'contain',
-                        filter: 'drop-shadow(0 0 16px rgba(74,126,255,0.35))',
+                        filter: 'drop-shadow(0 0 12px rgba(74,126,255,0.4))',
+                        mixBlendMode: 'lighten' as const,
                       }}
                     />
                   </div>

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem public *)",
+      "Bash(Select-Object FullName)",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\rayoj\\\\Desktop\\\\nyro-web\\\\public\\\\logos\\\\nyro-logo.png\" -Destination \"c:\\\\Users\\\\rayoj\\\\Desktop\\\\nyro-web\\\\public\\\\nyro-logo.png\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\rayoj\\\\Desktop\\\\nyro-web\\\\public\\\\images\")",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\rayoj\\\\Desktop\\\\nyro-web\\\\public\\\\foto-fundador.jpeg\" -Destination \"c:\\\\Users\\\\rayoj\\\\Desktop\\\\nyro-web\\\\public\\\\images\\\\foto-fundador.jpeg\" -Force)",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\rayoj\\\\Desktop\\\\nyro-web\\\\public\\\\logos\\\\nyro-logo.png\" -Destination \"c:\\\\Users\\\\rayoj\\\\Desktop\\\\nyro-web\\\\public\\\\images\\\\nyro-logo.png\" -Force)",
+      "Read(//c/Users/rayoj/Downloads/fotos nyro/**)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\rayoj\\\\Desktop\\\\nyro-web\\\\public\\\\images\" | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}} | Sort-Object {$_.KB} -Descending | Format-Table -AutoSize)"
+    ]
+  }
+}

@@ -5,6 +5,8 @@ import { Process } from '@/components/sections/Process';
 import { Cases } from '@/components/sections/Cases';
 import { CtaSection } from '@/components/sections/CtaSection';
 import ProductShowcase from '@/components/sections/ProductShowcase';
+import NosotrosPreview from '@/components/sections/NosotrosPreview';
+import BlogPreview from '@/components/sections/BlogPreview';
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
       <div id="servicios"><Services /></div>
       <Process />
       <div id="casos"><Cases /></div>
+      <NosotrosPreview />
+      <BlogPreview />
       <div id="contacto"><CtaSection /></div>
     </>
   );

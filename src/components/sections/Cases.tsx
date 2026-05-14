@@ -54,7 +54,7 @@ export function Cases() {
         }
       `}</style>
 
-      <section id="casos" style={{ padding: '100px 2rem' }}>
+      <section id="casos" style={{ padding: 'clamp(60px, 8vw, 100px) clamp(1.25rem, 4vw, 2rem)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
 
           {/* Header */}
@@ -87,6 +87,7 @@ export function Cases() {
 
           {/* Cards grid */}
           <StaggerContainer
+            className="nyro-cases-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: '1.4fr 1fr',
@@ -102,7 +103,7 @@ export function Cases() {
                     background: '#0C0E1C',
                     border: '1px solid rgba(255,255,255,0.06)',
                     borderRadius: 12,
-                    padding: '2.5rem',
+                    padding: 'clamp(1.25rem, 4vw, 2.5rem)',
                     position: 'relative',
                     overflow: 'hidden',
                     transition: 'border-color 0.25s',
@@ -116,6 +117,8 @@ export function Cases() {
                       justifyContent: 'space-between',
                       alignItems: 'center',
                       marginBottom: '1rem',
+                      flexWrap: 'wrap',
+                      gap: '0.5rem',
                     }}
                   >
                     <span
@@ -180,7 +183,7 @@ export function Cases() {
                   <h3
                     style={{
                       fontFamily: 'var(--font-syne)',
-                      fontSize: 20,
+                      fontSize: 'clamp(17px, 2.5vw, 20px)',
                       fontWeight: 700,
                       color: '#EEF0FF',
                       lineHeight: 1.2,

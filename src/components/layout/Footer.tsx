@@ -1,12 +1,13 @@
 'use client';
 
+import Link from 'next/link';
 import { NyroLogo } from '@/components/ui/NyroLogo';
 
 const FOOTER_LINKS = [
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Casos', href: '#casos' },
-  { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Servicios', href: '/#servicios' },
+  { label: 'Casos', href: '/#casos' },
+  { label: 'Nosotros', href: '/nosotros' },
+  { label: 'Contacto', href: '/#contacto' },
 ];
 
 export function Footer() {
@@ -15,10 +16,11 @@ export function Footer() {
       style={{
         borderTop: '1px solid rgba(255,255,255,0.06)',
         background: '#070810',
-        padding: '2.5rem 1.5rem',
+        padding: 'clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem)',
       }}
     >
       <div
+        className="nyro-footer-inner"
         style={{
           maxWidth: '1200px',
           margin: '0 auto',
@@ -29,9 +31,9 @@ export function Footer() {
           gap: '1.5rem',
         }}
       >
-        <a href="/" aria-label="NYRO Systems — inicio" style={{ textDecoration: 'none' }}>
+        <Link href="/" aria-label="NYRO Systems — inicio" style={{ textDecoration: 'none' }}>
           <NyroLogo size={28} />
-        </a>
+        </Link>
 
         <nav
           style={{
@@ -42,7 +44,7 @@ export function Footer() {
           }}
         >
           {FOOTER_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               style={{
@@ -59,7 +61,7 @@ export function Footer() {
               }
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 

@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 import { HERO_STATS } from '@/content/data';
 import { WHATSAPP_LINKS } from '@/lib/whatsapp';
@@ -242,13 +243,14 @@ export function Hero() {
 
             {/* 5. Stats row */}
             <motion.div
+              className="nyro-stats-row"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.45, ease: EASE }}
               style={{ display: 'flex', gap: '2rem', marginTop: '1.5rem', flexWrap: 'wrap' }}
             >
               {HERO_STATS.map((stat, i) => (
-                <div key={stat.number + i} style={{ display: 'contents' }}>
+                <React.Fragment key={stat.number + i}>
                   {i > 0 && (
                     <div
                       style={{
@@ -282,7 +284,7 @@ export function Hero() {
                       {stat.label}
                     </span>
                   </div>
-                </div>
+                </React.Fragment>
               ))}
             </motion.div>
 

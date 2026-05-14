@@ -18,7 +18,7 @@ export function Process() {
       className="section-transition-top section-transition-bottom"
       style={{
         background: '#0C0E1C',
-        padding: '100px 1.5rem',
+        padding: 'clamp(60px, 8vw, 100px) clamp(1.25rem, 4vw, 1.5rem)',
         borderTop: '1px solid rgba(255,255,255,0.06)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'relative',
@@ -27,7 +27,7 @@ export function Process() {
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
 
         {/* Header */}
-        <div style={{ marginBottom: '4rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+        <div className="nyro-process-header" style={{ marginBottom: '4rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           <span
             style={{
               fontFamily: 'var(--font-mono)',

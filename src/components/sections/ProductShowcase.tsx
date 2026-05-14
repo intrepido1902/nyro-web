@@ -58,7 +58,7 @@ export default function ProductShowcase() {
             }}>dashboard.nyrosystems.com</span>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
             {[
               { label: 'Clientes activos', value: '248', change: '+12%' },
               { label: 'Cotizaciones hoy', value: '34', change: '+8%' },

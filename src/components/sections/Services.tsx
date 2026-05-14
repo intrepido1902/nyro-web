@@ -24,7 +24,7 @@ export function Services() {
   return (
     <section
       id="servicios"
-      style={{ padding: '80px 1.5rem' }}
+      style={{ padding: 'clamp(60px, 8vw, 80px) clamp(1.25rem, 4vw, 1.5rem)' }}
     >
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
 
@@ -76,6 +76,7 @@ export function Services() {
 
         {/* 2×2 grid with stagger */}
         <StaggerContainer
+          className="nyro-services-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
@@ -93,7 +94,7 @@ export function Services() {
                 key={service.num}
                 variants={CARD_VARIANTS}
                 className="group relative transition-colors duration-200 bg-[#070810] hover:bg-[#0C0E1C]"
-                style={{ padding: '2.5rem', overflow: 'hidden' }}
+                style={{ padding: 'clamp(1.25rem, 4vw, 2.5rem)', overflow: 'hidden' }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
               >
                 {/* Radial gradient overlay on hover */}

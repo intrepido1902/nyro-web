@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { X, Menu } from 'lucide-react';
 import { NyroLogo } from '@/components/ui/NyroLogo';
 import { WHATSAPP_LINKS } from '@/lib/whatsapp';
 
@@ -15,6 +16,7 @@ const NAV_LINKS = [
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -95,6 +97,7 @@ export function Navbar() {
           href={WHATSAPP_LINKS.general}
           target="_blank"
           rel="noopener noreferrer"
+          className="hidden md:inline-block"
           style={{
             background: '#4A7EFF',
             color: '#fff',
@@ -115,7 +118,90 @@ export function Navbar() {
         >
           Hablemos →
         </a>
+
+        {/* Hamburger button — mobile only */}
+        <button
+          className="md:hidden"
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Abrir menú"
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            color: '#7A84AA',
+            display: 'flex',
+            alignItems: 'center',
+            padding: '4px',
+          }}
+        >
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
+
+      {/* Mobile overlay menu */}
+      {menuOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 64,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 99,
+            background: 'rgba(7,8,16,0.97)',
+            backdropFilter: 'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)',
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '2rem 1.5rem',
+            gap: '0.5rem',
+          }}
+        >
+          {NAV_LINKS.map((link) => {
+            const linkPath = link.href.includes('#') ? null : link.href;
+            const isActive = linkPath !== null && pathname === linkPath;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                style={{
+                  color: isActive ? '#EEF0FF' : '#7A84AA',
+                  fontSize: '1.125rem',
+                  fontWeight: isActive ? 600 : 500,
+                  padding: '0.875rem 1rem',
+                  borderRadius: '8px',
+                  textDecoration: 'none',
+                  background: isActive ? 'rgba(74,126,255,0.08)' : 'transparent',
+                  border: isActive ? '1px solid rgba(74,126,255,0.15)' : '1px solid transparent',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+          <a
+            href={WHATSAPP_LINKS.general}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            style={{
+              background: '#4A7EFF',
+              color: '#fff',
+              fontSize: '1rem',
+              fontWeight: 600,
+              padding: '12px 20px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              textAlign: 'center',
+              marginTop: '1rem',
+            }}
+          >
+            Hablemos →
+          </a>
+        </div>
+      )}
     </header>
   );
 }

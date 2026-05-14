@@ -110,3 +110,23 @@ h2, .nyro-h2 {
   z-index: 1;
   pointer-events: none;
 }
+
+/* ── Mobile responsive ── */
+@media (max-width: 768px) {
+  .nyro-services-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .nyro-cases-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .nyro-process-header {
+    margin-bottom: 2.5rem !important;
+  }
+  .nyro-stats-row {
+    gap: 1rem !important;
+  }
+  .nyro-footer-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}

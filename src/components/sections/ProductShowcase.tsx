@@ -55,7 +55,7 @@ export default function ProductShowcase() {
             <span style={{
               marginLeft: '1rem', fontFamily: 'var(--font-mono)',
               fontSize: '11px', color: '#3D4460'
-            }}>dashboard.nyrosystems.com</span>
+            }}>NYRO — Sistema de gestión</span>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>

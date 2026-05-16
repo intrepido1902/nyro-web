@@ -201,3 +201,22 @@ html, body {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Separadores de sección más suaves */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(74,126,255,0.15) 30%,
+    rgba(74,126,255,0.15) 70%,
+    transparent 100%
+  );
+  margin: 0;
+}
+
+/* Hover en links del footer */
+footer a:hover {
+  color: #7A84AA !important;
+  transition: color 0.2s ease;
+}

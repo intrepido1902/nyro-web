@@ -65,14 +65,14 @@ export function Footer() {
           ))}
         </nav>
 
-        <span
-          style={{
-            color: '#3D4460',
-            fontSize: '0.8125rem',
-          }}
-        >
-          © 2026 NYRO Systems · Colombia
-        </span>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-end' }}>
+          <span style={{ color: '#3D4460', fontSize: '0.8125rem' }}>
+            © 2026 NYRO Systems · Colombia
+          </span>
+          <span style={{ color: '#3D4460', fontSize: '0.8rem' }}>
+            · hola@nyrosystems.com
+          </span>
+        </div>
       </div>
     </footer>
   );

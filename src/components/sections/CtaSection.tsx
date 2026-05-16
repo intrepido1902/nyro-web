@@ -69,9 +69,8 @@ export function CtaSection() {
               maxWidth: 580,
             }}
           >
-            Tu empresa puede operar mejor.<br />
-            Te mostramos{' '}
-            <em style={{ fontStyle: 'normal', color: '#4A7EFF' }}>cómo.</em>
+            Tu competencia ya se está digitalizando.<br />
+            <em style={{ fontStyle: 'normal', color: '#4A7EFF' }}>¿Y tú?</em>
           </h2>
         </AnimateOnScroll>
 
@@ -87,9 +86,9 @@ export function CtaSection() {
               maxWidth: 560,
             }}
           >
-            Agenda una llamada de 30 minutos. Sin compromiso. Te decimos exactamente
-            qué necesita tu empresa para dejar el Excel, automatizar tus procesos y
-            conseguir más clientes.
+            Agenda un diagnóstico de 30 minutos. Analizamos tu operación,
+            identificamos dónde estás perdiendo tiempo y dinero,
+            y te decimos exactamente qué construiríamos para ti.
           </p>
         </AnimateOnScroll>
 
@@ -115,7 +114,7 @@ export function CtaSection() {
               textAlign: 'center',
             }}
           >
-            Quiero una llamada gratis →
+            Agendar diagnóstico →
           </a>
 
           {/* Note */}
@@ -128,7 +127,7 @@ export function CtaSection() {
               fontFamily: 'var(--font-dm-sans)',
             }}
           >
-            Sin compromiso · Sin tecnicismos · Con resultados claros
+            Diagnóstico gratuito · Respuesta en menos de 2h · Sin compromiso
           </p>
         </AnimateOnScroll>
       </div>

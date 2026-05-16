@@ -214,18 +214,16 @@ export function Hero() {
                   display: 'flex', alignItems: 'center', gap: 8,
                   boxShadow: '0 0 30px rgba(74,126,255,0.2)',
                 }}>
-                  Digitaliza tu empresa ahora →
+                  Agendar diagnóstico →
                 </button>
               </MagneticButton>
-              <a
-                href={WHATSAPP_LINKS.servicios}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })}
                 className="nyro-btn-ghost"
                 style={{ width: '100%', maxWidth: '320px', textAlign: 'center' as const, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 Ver cómo lo hacemos
-              </a>
+              </button>
             </motion.div>
 
             {/* 5. Stats row */}
@@ -273,6 +271,14 @@ export function Hero() {
                   </div>
                 </React.Fragment>
               ))}
+              <p style={{
+                fontFamily: 'var(--font-mono)', fontSize: 10,
+                color: '#3D4460', letterSpacing: '0.08em',
+                marginTop: '0.5rem',
+                textTransform: 'uppercase' as const,
+              }}>
+                Basado en resultados de proyectos entregados
+              </p>
             </motion.div>
 
             {/* 6. Badge */}
@@ -282,32 +288,40 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.5, ease: EASE }}
               style={{
                 display: 'flex',
-                alignItems: 'center',
-                gap: 8,
+                flexDirection: 'column',
+                gap: '0.5rem',
                 marginTop: '1.5rem',
               }}
             >
-              <span
-                className="nyro-dot-pulse"
-                style={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: '50%',
-                  background: '#22C55E',
-                  display: 'inline-block',
-                  flexShrink: 0,
-                }}
-              />
-              <span
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 11,
-                  color: '#3D4460',
-                  whiteSpace: 'normal' as const,
-                  wordBreak: 'break-word' as const,
-                }}
-              >
-                Operamos en Colombia 🇨🇴 · Ya transformamos empresas como la tuya.
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <span
+                  className="nyro-dot-pulse"
+                  style={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: '50%',
+                    background: '#22C55E',
+                    display: 'inline-block',
+                    flexShrink: 0,
+                  }}
+                />
+                <span
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: 11,
+                    color: '#3D4460',
+                    whiteSpace: 'normal' as const,
+                    wordBreak: 'break-word' as const,
+                  }}
+                >
+                  Operamos en Colombia · LATAM
+                </span>
+              </div>
+              <span style={{
+                fontFamily: 'var(--font-mono)', fontSize: 11,
+                color: '#3D4460', letterSpacing: '0.06em',
+              }}>
+                Respondemos en menos de 2 horas hábiles
               </span>
             </motion.div>
           </div>

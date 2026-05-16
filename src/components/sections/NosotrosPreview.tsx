@@ -97,7 +97,7 @@ export default function NosotrosPreview() {
                   src="/images/foto-fundador.jpeg"
                   alt="Santiago Rayo — Founder & CEO"
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'center 15%' }}
+                  style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
                   sizes="180px"
                 />
               </div>

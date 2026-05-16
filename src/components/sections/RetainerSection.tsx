@@ -68,23 +68,32 @@ export default function RetainerSection() {
               Tu sistema no para.<br />Nosotros tampoco.
             </h2>
 
-            {/* Badge precio */}
             <div style={{
-              background: 'rgba(74,126,255,0.08)',
-              border: '1px solid rgba(74,126,255,0.2)',
-              borderRadius: 12, padding: '1rem 1.5rem',
-              textAlign: 'center', flexShrink: 0,
+              background: 'rgba(74,126,255,0.06)',
+              border: '1px solid rgba(74,126,255,0.15)',
+              borderRadius: 12,
+              padding: '1rem 1.5rem',
+              textAlign: 'center',
+              flexShrink: 0,
             }}>
               <p style={{
-                fontFamily: 'var(--font-syne)', fontSize: 22,
-                fontWeight: 800, color: '#4A7EFF', margin: 0,
-              }}>$100 – $200 USD<span style={{ fontSize: 14, fontWeight: 400 }}>/mes</span></p>
+                fontFamily: 'var(--font-syne)',
+                fontSize: 16,
+                fontWeight: 700,
+                color: '#EEF0FF',
+                margin: 0,
+                marginBottom: 6,
+              }}>Mantenimiento activo mensual</p>
               <p style={{
-                fontFamily: 'var(--font-dm-sans)', fontSize: 12,
-                color: '#7A84AA', margin: '4px 0 0',
-                maxWidth: 200,
+                fontFamily: 'var(--font-dm-sans)',
+                fontSize: 13,
+                color: '#7A84AA',
+                margin: 0,
+                maxWidth: 220,
+                lineHeight: 1.5,
               }}>
-                Menos que un empleado.<br />Resultados de todo un equipo.
+                Tu infraestructura mejora continuamente
+                sin que tengas que hacer nada.
               </p>
             </div>
           </div>
@@ -141,12 +150,13 @@ export default function RetainerSection() {
 
           <div style={{ position: 'relative' }}>
             {/* Línea base */}
-            <div style={{
+            <div className="nyro-timeline-line" style={{
               position: 'absolute', top: 16, left: 0, right: 0,
               height: 1, background: 'rgba(255,255,255,0.06)',
             }}/>
             {/* Línea animada */}
             <motion.div
+              className="nyro-timeline-line"
               initial={{ scaleX: 0 }}
               animate={timelineInView ? { scaleX: 1 } : {}}
               transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -158,11 +168,15 @@ export default function RetainerSection() {
               }}
             />
 
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: '1rem', position: 'relative',
-            }}>
+            <div
+              className="nyro-timeline-grid"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(4, 1fr)',
+                gap: '1rem',
+                position: 'relative',
+              }}
+            >
               {TIMELINE.map((item, i) => (
                 <motion.div
                   key={item.month}

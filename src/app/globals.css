@@ -185,3 +185,19 @@ html, body {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(0.8); }
 }
+
+@media (max-width: 640px) {
+  .nyro-timeline-line {
+    display: none !important;
+  }
+  .nyro-timeline-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .nyro-timeline-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -36,7 +36,7 @@ export default function BlogPage() {
           maxWidth: '520px', marginBottom: '4rem'
         }}>
           Próximamente compartiremos guías, casos de estudio y
-          estrategias para digitalizar y hacer crecer tu empresa.
+          estrategias para construir infraestructura operacional y escalar tu empresa.
         </p>
 
         <div style={{
@@ -51,8 +51,8 @@ export default function BlogPage() {
             textTransform: 'uppercase', marginBottom: '1rem'
           }}>Próximamente</p>
           <p style={{ fontSize: '16px', color: '#7A84AA', marginBottom: '2rem' }}>
-            Mientras tanto, si tienes preguntas sobre cómo
-            digitalizar tu empresa, hablemos directamente.
+            Mientras tanto, si tienes preguntas sobre
+            infraestructura operacional, hablemos directamente.
           </p>
           <a
             href="https://wa.me/573178051585?text=Hola%20NYRO%20Systems%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."

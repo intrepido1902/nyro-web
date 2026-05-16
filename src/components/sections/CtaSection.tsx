@@ -51,7 +51,7 @@ export function CtaSection() {
               textTransform: 'uppercase',
             }}
           >
-            ¿Listo para crecer?
+            Siguiente paso
           </span>
         </AnimateOnScroll>
 
@@ -69,8 +69,8 @@ export function CtaSection() {
               maxWidth: 580,
             }}
           >
-            Tu competencia ya se está digitalizando.<br />
-            <em style={{ fontStyle: 'normal', color: '#4A7EFF' }}>¿Y tú?</em>
+            Tu competencia ya opera con infraestructura digital.<br />
+            <em style={{ fontStyle: 'normal', color: '#4A7EFF' }}>¿Tu empresa también?</em>
           </h2>
         </AnimateOnScroll>
 
@@ -86,9 +86,9 @@ export function CtaSection() {
               maxWidth: 560,
             }}
           >
-            Agenda un diagnóstico de 30 minutos. Analizamos tu operación,
-            identificamos dónde estás perdiendo tiempo y dinero,
-            y te decimos exactamente qué construiríamos para ti.
+            Auditoría arquitectónica de 30 minutos. Mapeamos tu operación actual,
+            identificamos los cuellos de botella críticos y definimos exactamente
+            qué infraestructura construiríamos para eliminarlos.
           </p>
         </AnimateOnScroll>
 
@@ -114,7 +114,7 @@ export function CtaSection() {
               textAlign: 'center',
             }}
           >
-            Agendar diagnóstico →
+            Agendar diagnóstico arquitectónico →
           </a>
 
           {/* Note */}
@@ -127,7 +127,7 @@ export function CtaSection() {
               fontFamily: 'var(--font-dm-sans)',
             }}
           >
-            Diagnóstico gratuito · Respuesta en menos de 2h · Sin compromiso
+            Sin compromiso · Diagnóstico gratuito · Respuesta en &lt; 2h
           </p>
         </AnimateOnScroll>
       </div>

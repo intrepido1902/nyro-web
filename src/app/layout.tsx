@@ -23,12 +23,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'NYRO Systems — Infraestructura digital y automatización empresarial',
-  description: 'Construimos sistemas digitales a la medida: bases de datos, automatización de procesos e integración de IA para empresas en Colombia y LATAM.',
-  keywords: 'infraestructura digital, automatización empresarial, sistemas a la medida, bases de datos, integración IA, Colombia, LATAM',
+  title: 'NYRO Systems — Infraestructura Digital Operacional',
+  description: 'Ecosistemas digitales autónomos para empresas en crecimiento. Arquitecturas headless, ingeniería de datos e integración de IA. Colombia y LATAM.',
+  keywords: ['infraestructura digital', 'automatización operacional', 'ingeniería de datos', 'arquitectura headless', 'sistemas empresariales', 'integración IA', 'Colombia', 'LATAM'],
   openGraph: {
-    title: 'NYRO Systems — Infraestructura digital para empresas',
-    description: 'De Excel y WhatsApp a sistemas digitales que trabajan solos.',
+    title: 'NYRO Systems — Infraestructura Digital Operacional',
+    description: 'De procesos manuales a ecosistemas autónomos. Ingeniería de sistemas para empresas que escalan.',
     url: 'https://nyro-web-theta.vercel.app',
     siteName: 'NYRO Systems',
     locale: 'es_CO',

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { NyroLogo } from '@/components/ui/NyroLogo';
 
 const FOOTER_LINKS = [
-  { label: 'Servicios', href: '/#servicios' },
+  { label: 'Plataforma', href: '/#servicios' },
   { label: 'Casos', href: '/#casos' },
   { label: 'Nosotros', href: '/nosotros' },
   { label: 'Contacto', href: '/#contacto' },
@@ -68,6 +68,12 @@ export function Footer() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-end' }}>
           <span style={{ color: '#3D4460', fontSize: '0.8125rem' }}>
             © 2026 NYRO Systems · Colombia
+          </span>
+          <span style={{
+            fontFamily: 'var(--font-mono)', fontSize: '0.625rem',
+            color: '#3D4460', letterSpacing: '0.08em',
+          }}>
+            Infraestructura digital · Colombia &amp; LATAM
           </span>
           <span style={{ color: '#3D4460', fontSize: '0.8rem' }}>
             · hola@nyrosystems.com

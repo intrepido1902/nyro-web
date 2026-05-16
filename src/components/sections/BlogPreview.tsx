@@ -82,7 +82,7 @@ export default function BlogPreview() {
             lineHeight: 1.5, margin: 0, maxWidth: 560,
           }}>
             Casos reales, guías técnicas y estrategias
-            para digitalizar operaciones empresariales.
+            para construir infraestructura operacional empresarial.
           </p>
 
           <p style={{
@@ -95,7 +95,7 @@ export default function BlogPreview() {
           </p>
 
           <a
-            href="https://wa.me/573178051585?text=Hola%20NYRO%2C%20tengo%20preguntas%20sobre%20digitalizar%20mi%20empresa."
+            href="https://wa.me/573178051585?text=Hola%20NYRO%2C%20tengo%20preguntas%20sobre%20infraestructura%20operacional."
             target="_blank"
             rel="noopener noreferrer"
             style={{

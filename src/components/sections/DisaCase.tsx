@@ -2,32 +2,32 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 
-const WHATSAPP_URL = 'https://wa.me/573178051585?text=Hola%20NYRO%2C%20quiero%20lo%20mismo%20que%20hicieron%20con%20DISA%20para%20mi%20empresa.'
+const WHATSAPP_URL = 'https://wa.me/573178051585?text=Hola%20NYRO%2C%20quiero%20iniciar%20un%20diagn%C3%B3stico%20arquitect%C3%B3nico%20para%20mi%20empresa.'
 
 const PHASES = [
   {
     num: '01',
-    label: 'La situación inicial',
+    label: 'Estado inicial de la operación',
     color: '#FF4444',
-    items: ['Excel con múltiples versiones sin control', 'Pedidos gestionados por WhatsApp', 'Clientes conseguidos solo por voz a voz', 'Cotizaciones manuales tardaban 2 horas'],
+    items: ['Excel fragmentado sin control de versiones', 'Pedidos gestionados por mensajería sin registro', 'Adquisición no sistematizada, sin pipeline', 'Cotizaciones manuales: latencia promedio 120 min'],
   },
   {
     num: '02',
-    label: 'El diagnóstico NYRO',
+    label: 'Diagnóstico arquitectónico',
     color: '#F59E0B',
-    items: ['Mapeo completo de procesos operativos', 'Identificación de 4 cuellos de botella críticos', 'Diseño del sistema integrado', 'Plan de implementación en 3 semanas'],
+    items: ['Mapeo completo del flujo operacional', 'Identificación de 4 cuellos de botella críticos', 'Diseño del sistema integrado', 'Plan de implementación: 3 semanas'],
   },
   {
     num: '03',
-    label: 'Lo que construimos',
+    label: 'Infraestructura desplegada',
     color: '#4A7EFF',
-    items: ['Web profesional con catálogo digital', 'Base de datos centralizada (clientes, productos, pedidos)', 'Sistema de cotización automático', 'Dashboard de métricas en tiempo real'],
+    items: ['Arquitectura headless con catálogo operacional', 'Base de datos relacional centralizada (clientes, inventario, pedidos)', 'Motor de cotización automatizado', 'Dashboard de métricas en tiempo real'],
   },
   {
     num: '04',
-    label: 'El resultado',
+    label: 'Impacto operacional medido',
     color: '#22C55E',
-    items: ['0 errores manuales en cotizaciones', '100% de la operación digitalizada', 'Cotizaciones: de 2 horas a 3 minutos', 'Clientes atendidos con sistema, no WhatsApp'],
+    items: ['−80% fricción operacional medida', '100% operación centralizada en un sistema', 'Cotizaciones: de 120 min a 4 min (96% reducción)', 'Pipeline de adquisición digital activo'],
   },
 ]
 
@@ -73,15 +73,15 @@ export default function DisaCase() {
             fontFamily: 'var(--font-mono)', fontSize: 11,
             color: '#4A7EFF', letterSpacing: '0.14em',
             textTransform: 'uppercase', display: 'block', marginBottom: '0.75rem',
-          }}>Caso de éxito — DISA</span>
+          }}>Caso de arquitectura — DISA</span>
           <h2 style={{
             fontFamily: 'var(--font-syne)',
             fontSize: 'clamp(26px, 3vw, 42px)',
             fontWeight: 700, color: '#EEF0FF',
-            lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0,
+            lineHeight: 1.1, letterSpacing: '-0.025em', margin: 0,
           }}>
-            De Excel y WhatsApp<br />
-            <span style={{ color: '#4A7EFF' }}>a sistema digital en 3 semanas.</span>
+            Arquitectura operacional<br />
+            <span style={{ color: '#4A7EFF' }}>construida en 3 semanas.</span>
           </h2>
         </motion.div>
 
@@ -156,9 +156,9 @@ export default function DisaCase() {
           }}
         >
           {[
-            { value: 0, suffix: ' errores', label: 'errores manuales en cotizaciones' },
-            { value: 100, suffix: '%', label: 'operación digitalizada' },
-            { value: 3, suffix: ' min', label: 'tiempo de cotización (antes: 2h)' },
+            { value: 80, suffix: '%', label: 'reducción de fricción operacional' },
+            { value: 100, suffix: '%', label: 'operación centralizada en un sistema' },
+            { value: 96, suffix: '%', label: 'reducción en tiempo de cotización' },
           ].map((metric, i) => (
             <div key={i} style={{ textAlign: 'center' }}>
               <p style={{
@@ -203,7 +203,7 @@ export default function DisaCase() {
               ;(e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)'
             }}
           >
-            Quiero lo mismo para mi empresa →
+            Iniciar diagnóstico arquitectónico →
           </a>
         </motion.div>
 

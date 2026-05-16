@@ -5,18 +5,18 @@ import { motion, useInView } from 'framer-motion'
 const CARDS = [
   {
     icon: '🛡️',
-    title: 'Monitoreo 24/7',
-    desc: 'Tu sistema funcionando siempre. Alertas automáticas, uptime garantizado, sin sorpresas.',
+    title: 'Observabilidad continua',
+    desc: 'Monitoreo de infraestructura activa. Alertas automáticas, detección de anomalías y uptime garantizado sin intervención manual.',
   },
   {
     icon: '⚡',
-    title: 'Mejoras continuas',
-    desc: 'Cada mes tu sistema crece: nuevas automatizaciones, integraciones y optimizaciones.',
+    title: 'Integración continua',
+    desc: 'Cada ciclo mensual incorpora nuevas integraciones, optimizaciones de rendimiento y expansión de flujos automatizados.',
   },
   {
     icon: '🤝',
-    title: 'Soporte directo',
-    desc: 'Acceso directo al equipo NYRO. Respuesta en menos de 24h, siempre.',
+    title: 'Acceso directo al equipo',
+    desc: 'Canal dedicado con el equipo de ingeniería NYRO. Respuesta en menos de 4h hábiles para cualquier requerimiento técnico.',
   },
 ]
 
@@ -53,7 +53,7 @@ export default function RetainerSection() {
             fontFamily: 'var(--font-mono)', fontSize: 11,
             color: '#4A7EFF', letterSpacing: '0.14em',
             textTransform: 'uppercase', display: 'block', marginBottom: '0.75rem',
-          }}>Mantenimiento y evolución</span>
+          }}>Retainer mensual</span>
 
           <div style={{
             display: 'flex', alignItems: 'flex-end',
@@ -65,7 +65,7 @@ export default function RetainerSection() {
               fontWeight: 700, color: '#EEF0FF',
               lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0,
             }}>
-              Tu sistema no para.<br />Nosotros tampoco.
+              Software eterno.<br />Tu sistema evoluciona cada mes.
             </h2>
 
             <div style={{
@@ -83,7 +83,7 @@ export default function RetainerSection() {
                 color: '#EEF0FF',
                 margin: 0,
                 marginBottom: 6,
-              }}>Mantenimiento activo mensual</p>
+              }}>Retainer mensual</p>
               <p style={{
                 fontFamily: 'var(--font-dm-sans)',
                 fontSize: 13,
@@ -92,8 +92,8 @@ export default function RetainerSection() {
                 maxWidth: 220,
                 lineHeight: 1.5,
               }}>
-                Tu infraestructura mejora continuamente
-                sin que tengas que hacer nada.
+                Tu infraestructura evoluciona en cada ciclo.
+                Sin fricción, sin gestión adicional.
               </p>
             </div>
           </div>

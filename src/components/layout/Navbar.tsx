@@ -8,10 +8,9 @@ import { NyroLogo } from '@/components/ui/NyroLogo';
 import { WHATSAPP_LINKS } from '@/lib/whatsapp';
 
 const NAV_LINKS = [
-  { label: 'Servicios', href: '/#servicios' },
+  { label: 'Plataforma', href: '/#servicios' },
   { label: 'Casos', href: '/#casos' },
   { label: 'Nosotros', href: '/nosotros' },
-  { label: 'Blog', href: '/blog' },
 ];
 
 export function Navbar() {
@@ -116,7 +115,7 @@ export function Navbar() {
             ((e.currentTarget as HTMLAnchorElement).style.background = '#4A7EFF')
           }
         >
-          Hablemos →
+          Book Strategy Call
         </a>
 
         {/* Hamburger button — mobile only */}
@@ -198,7 +197,7 @@ export function Navbar() {
               marginTop: '1rem',
             }}
           >
-            Hablemos →
+            Book Strategy Call
           </a>
         </div>
       )}

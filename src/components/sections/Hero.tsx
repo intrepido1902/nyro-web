@@ -167,10 +167,10 @@ export function Hero() {
                 letterSpacing: '-0.03em', color: '#EEF0FF',
                 marginBottom: '1.5rem',
               }}>
-                Tu operación,{' '}
+                Infraestructura digital<br />
                 <em style={{ fontStyle: 'normal', color: '#4A7EFF',
-                  textShadow: '0 0 40px rgba(74,126,255,0.4)' }}>
-                  sin caos.
+                  textShadow: '0 0 40px rgba(74,126,255,0.35)' }}>
+                  para operaciones que escalan.
                 </em>
               </GlitchText>
             </motion.div>
@@ -192,8 +192,8 @@ export function Hero() {
                 wordBreak: 'break-word',
               }}
             >
-              Reemplazamos Excel y WhatsApp con sistemas digitales
-              que trabajan solos, día y noche.
+              Transformamos empresas con procesos manuales en ecosistemas operacionales autónomos.
+              Arquitecturas headless, ingeniería de datos e integración de IA.
             </motion.p>
 
             {/* 4. Buttons */}
@@ -204,7 +204,7 @@ export function Hero() {
               style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', width: '100%' }}
             >
               <MagneticButton
-                href="https://wa.me/573178051585?text=Hola%20NYRO%2C%20quiero%20digitalizar%20mi%20empresa."
+                href="https://wa.me/573178051585?text=Hola%20NYRO%2C%20quiero%20agendar%20una%20auditor%C3%ADa%20arquitect%C3%B3nica."
               >
                 <button style={{
                   background: '#4A7EFF', color: '#fff',
@@ -212,9 +212,9 @@ export function Hero() {
                   padding: '12px 28px', fontSize: 15, fontWeight: 500,
                   cursor: 'pointer', transition: 'all 0.25s',
                   display: 'flex', alignItems: 'center', gap: 8,
-                  boxShadow: '0 0 30px rgba(74,126,255,0.2)',
+                  boxShadow: '0 0 40px rgba(74,126,255,0.12)',
                 }}>
-                  Agendar diagnóstico →
+                  Agendar auditoría arquitectónica →
                 </button>
               </MagneticButton>
               <button
@@ -277,7 +277,7 @@ export function Hero() {
                 marginTop: '0.5rem',
                 textTransform: 'uppercase' as const,
               }}>
-                Basado en resultados de proyectos entregados
+                Métricas basadas en proyectos entregados
               </p>
             </motion.div>
 
@@ -374,7 +374,7 @@ export function Hero() {
                 {/* Cubo central principal */}
                 <g opacity={1}>
                   <polygon points="175,110 230,75 285,110 230,145"
-                    fill="url(#face-top)" stroke="#4A7EFF" strokeWidth={1.2} strokeOpacity={0.7}/>
+                    fill="url(#face-top)" stroke="#4A7EFF" strokeWidth={1.2} strokeOpacity={0.6}/>
                   <polygon points="175,110 175,230 230,265 230,145"
                     fill="#090B18" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.3}/>
                   <polygon points="230,145 285,110 285,230 230,265"
@@ -419,7 +419,7 @@ export function Hero() {
 
                 {/* Plataforma base */}
                 <ellipse cx="230" cy="340" rx="160" ry="16"
-                  fill="none" stroke="#4A7EFF" strokeWidth={1.5} opacity={0.35}
+                  fill="none" stroke="#4A7EFF" strokeWidth={1.5} opacity={0.5}
                   filter="url(#hero-glow-md)"/>
                 <ellipse cx="230" cy="340" rx="90" ry="8"
                   fill="rgba(74,126,255,0.06)"/>

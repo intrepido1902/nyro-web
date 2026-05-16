@@ -220,3 +220,34 @@ footer a:hover {
   color: #7A84AA !important;
   transition: color 0.2s ease;
 }
+
+/* ── NYRO utility classes ── */
+@keyframes nyro-reveal {
+  from { clip-path: inset(0 0 100% 0); opacity: 0; }
+  to   { clip-path: inset(0 0 0% 0);   opacity: 1; }
+}
+
+.nyro-section-sep {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(74,126,255,0.12) 30%, rgba(74,126,255,0.12) 70%, transparent 100%);
+}
+
+.nyro-body-text {
+  color: rgba(238,240,255,0.65);
+  line-height: 1.75;
+}
+
+a.nyro-link {
+  color: #3D4460;
+  transition: color 0.2s ease;
+}
+a.nyro-link:hover {
+  color: #7A84AA;
+}
+
+.nyro-glass {
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.06);
+}

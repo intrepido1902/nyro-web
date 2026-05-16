@@ -115,8 +115,8 @@ export function Process() {
               maxWidth: 520,
             }}
           >
-            No necesitas saber de tecnología. Nosotros nos encargamos de todo —
-            tú solo nos cuentas cómo funciona tu empresa hoy y qué quieres lograr.
+            El proceso está diseñado para que tu equipo no necesite contexto técnico.
+            Tú describes la operación, nosotros diseñamos y construimos la arquitectura.
           </p>
         </div>
 

@@ -108,7 +108,7 @@ export function Services() {
                 textTransform: 'uppercase',
               }}
             >
-              Qué hacemos
+              Plataforma
             </span>
             <h2
               style={{
@@ -121,7 +121,7 @@ export function Services() {
                 margin: 0,
               }}
             >
-              Todo lo que necesita tu empresa para operar mejor y crecer.
+              Tres pilares de infraestructura.<br />Un ecosistema operacional.
             </h2>
           </div>
           <p
@@ -133,18 +133,17 @@ export function Services() {
               margin: 0,
             }}
           >
-            No vendemos tecnología por vender. Resolvemos problemas reales: el Excel que falla,
-            el WhatsApp que se pierde, los clientes que no llegan. Cada sistema tiene un propósito
-            claro.
+            Cada pilar resuelve una capa de fricción operacional. Juntos, eliminan la dependencia
+            de procesos manuales y construyen la base para escalar sin límites estructurales.
           </p>
         </div>
 
-        {/* 2×2 grid with stagger */}
+        {/* 3-col grid with stagger */}
         <StaggerContainer
           className="nyro-services-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '1px',
             background: 'rgba(255,255,255,0.06)',
             border: '1px solid rgba(255,255,255,0.06)',

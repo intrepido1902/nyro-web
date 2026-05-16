@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Syne, DM_Sans, JetBrains_Mono } from 'next/font/google';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-import SectionNavigator from '@/components/ui/section-navigator';
 import './globals.css';
 
 const syne = Syne({
@@ -41,7 +40,6 @@ export default function RootLayout({
     >
       <body style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Navbar />
-        <SectionNavigator />
         <main style={{ flex: 1 }}>{children}</main>
         <Footer />
       </body>

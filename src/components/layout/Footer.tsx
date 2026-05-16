@@ -71,7 +71,7 @@ export function Footer() {
             fontSize: '0.8125rem',
           }}
         >
-          © 2025 NYRO Systems · Colombia
+          © 2026 NYRO Systems · Colombia
         </span>
       </div>
     </footer>

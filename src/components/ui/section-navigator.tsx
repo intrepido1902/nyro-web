@@ -37,14 +37,14 @@ export default function SectionNavigator() {
       ? NOSOTROS_SECTIONS[0].id
       : HOME_SECTIONS[0].id
     setActiveSection(defaultId)
-    setVisible(false)
+    setVisible(true)
   }, [pathname])
 
   const updateState = useCallback(() => {
     const scrollY = window.scrollY
     const total = document.documentElement.scrollHeight - window.innerHeight
 
-    setVisible(scrollY > 200)
+    setVisible(true)
 
     const newProgress = total > 0
       ? Math.min(100, Math.max(0, (scrollY / total) * 100))
@@ -80,7 +80,7 @@ export default function SectionNavigator() {
     setIsExpanded(false)
   }, [])
 
-  if (!mounted || !visible) return null
+  if (!mounted) return null
   if (pathname === '/blog') return null
 
   const activeLabel = sections.find(s => s.id === activeSection)?.label ?? 'NYRO'

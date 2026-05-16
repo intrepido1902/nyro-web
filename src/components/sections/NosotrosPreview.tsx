@@ -87,16 +87,17 @@ export default function NosotrosPreview() {
               <div style={{
                 width: 180,
                 height: 180,
-                borderRadius: 16,
+                borderRadius: 12,
                 overflow: 'hidden',
-                border: '1px solid rgba(74,126,255,0.2)',
+                border: '1px solid rgba(74,126,255,0.25)',
+                boxShadow: '0 0 40px rgba(74,126,255,0.1)',
                 position: 'relative',
               }}>
                 <Image
                   src="/images/foto-fundador.jpeg"
                   alt="Santiago Rayo — Founder & CEO"
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                  style={{ objectFit: 'cover', objectPosition: 'center 15%' }}
                   sizes="180px"
                 />
               </div>

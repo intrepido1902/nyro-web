@@ -1,40 +1,11 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { HERO_STATS } from '@/content/data';
 import { WHATSAPP_LINKS } from '@/lib/whatsapp';
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
-
-function IsoCube({
-  cx, cy, w, h, opacity = 1,
-}: {
-  cx: number; cy: number; w: number; h: number; opacity?: number;
-}) {
-  const hw = w / 2;
-  const qh = w / 4;
-  const top   = `${cx},${cy} ${cx+hw},${cy+qh} ${cx},${cy+hw} ${cx-hw},${cy+qh}`;
-  const left  = `${cx-hw},${cy+qh} ${cx},${cy+hw} ${cx},${cy+hw+h} ${cx-hw},${cy+qh+h}`;
-  const right = `${cx},${cy+hw} ${cx+hw},${cy+qh} ${cx+hw},${cy+qh+h} ${cx},${cy+hw+h}`;
-  return (
-    <g opacity={opacity}>
-      <polygon points={top}   fill="#131628" stroke="#4A7EFF" strokeOpacity={0.55} strokeWidth={1}   />
-      <polygon points={left}  fill="#0B0D1E" stroke="#4A7EFF" strokeOpacity={0.28} strokeWidth={0.7} />
-      <polygon points={right} fill="#090B18" stroke="#4A7EFF" strokeOpacity={0.28} strokeWidth={0.7} />
-    </g>
-  );
-}
-
-const PARTICLES = [
-  { x: 75,  y: 80,  o: 0.50 },
-  { x: 390, y: 100, o: 0.40 },
-  { x: 60,  y: 200, o: 0.30 },
-  { x: 400, y: 220, o: 0.45 },
-  { x: 350, y: 60,  o: 0.35 },
-  { x: 100, y: 300, o: 0.25 },
-];
 
 export function Hero() {
   return (
@@ -160,7 +131,7 @@ export function Hero() {
           }}
         >
           {/* ── Left column ── */}
-          <div>
+          <div style={{ overflow: 'hidden', width: '100%' }}>
             {/* 1. Label */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -188,18 +159,17 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
               style={{
                 fontFamily: 'var(--font-syne)',
-                fontSize: 'clamp(26px, 4.5vw, 52px)',
+                fontSize: 'clamp(32px, 8vw, 64px)',
                 fontWeight: 800,
-                lineHeight: 1.1,
+                lineHeight: 1.08,
                 letterSpacing: '-0.03em',
                 color: '#EEF0FF',
                 margin: 0,
                 marginBottom: '1.5rem',
-                wordBreak: 'keep-all' as const,
-                overflowWrap: 'break-word',
               }}
             >
-              Transformamos empresas que operan en el caos en máquinas digitales que{' '}
+              Tu empresa, digitalizada.<br />
+              Tu operación,{' '}
               <em
                 style={{
                   fontStyle: 'normal',
@@ -207,7 +177,7 @@ export function Hero() {
                   textShadow: '0 0 40px rgba(74,126,255,0.4)',
                 }}
               >
-                crecen solas.
+                automatizada.
               </em>
             </motion.h1>
 
@@ -228,8 +198,8 @@ export function Hero() {
                 wordBreak: 'break-word',
               }}
             >
-              Construimos tu web, organizamos tu información y automatizamos tus
-              procesos para que tu empresa consiga más clientes y opere sin caos.
+              Construimos la infraestructura digital que tu empresa necesita
+              para conseguir más clientes y operar sin caos.
             </motion.p>
 
             {/* 4. Buttons */}
@@ -343,40 +313,144 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* ── Right column — Hero image ── */}
+          {/* ── Right column — Isometric SVG ── */}
           <div className="hidden md:flex relative justify-center items-center">
             <div style={{
               position: 'relative',
               width: '100%',
-              maxWidth: 520,
+              maxWidth: 500,
               animation: 'nyro-float 6s ease-in-out infinite',
             }}>
-              <Image
-                src="/images/hero-visual.png"
-                alt="NYRO Systems — Infraestructura tecnológica"
-                width={520}
-                height={420}
-                priority
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 40px rgba(74,126,255,0.25))',
-                  mixBlendMode: 'lighten' as const,
-                }}
-              />
+              <svg viewBox="0 0 460 400" width="100%" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="hero-glow-sm">
+                    <feGaussianBlur stdDeviation="2.5" result="b"/>
+                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                  <filter id="hero-glow-md">
+                    <feGaussianBlur stdDeviation="6" result="b"/>
+                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                  <linearGradient id="face-top" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#1a1f3a"/>
+                    <stop offset="100%" stopColor="#0d1024"/>
+                  </linearGradient>
+                </defs>
+
+                {/* Cubo trasero izquierdo */}
+                <g opacity={0.6}>
+                  <polygon points="110,160 165,130 220,160 165,190"
+                    fill="#131628" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.4}/>
+                  <polygon points="110,160 110,220 165,250 165,190"
+                    fill="#090B18" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.2}/>
+                  <polygon points="165,190 220,160 220,220 165,250"
+                    fill="#0B0D1E" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.2}/>
+                </g>
+
+                {/* Cubo trasero derecho */}
+                <g opacity={0.6}>
+                  <polygon points="240,160 295,130 350,160 295,190"
+                    fill="#131628" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.4}/>
+                  <polygon points="240,160 240,220 295,250 295,190"
+                    fill="#090B18" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.2}/>
+                  <polygon points="295,190 350,160 350,220 295,250"
+                    fill="#0B0D1E" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.2}/>
+                </g>
+
+                {/* Cubo central principal */}
+                <g opacity={1}>
+                  <polygon points="175,110 230,75 285,110 230,145"
+                    fill="url(#face-top)" stroke="#4A7EFF" strokeWidth={1.2} strokeOpacity={0.7}/>
+                  <polygon points="175,110 175,230 230,265 230,145"
+                    fill="#090B18" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.3}/>
+                  <polygon points="230,145 285,110 285,230 230,265"
+                    fill="#0D0F20" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.3}/>
+                  <line x1="175" y1="230" x2="230" y2="265"
+                    stroke="#4A7EFF" strokeWidth={1} opacity={0.5}
+                    filter="url(#hero-glow-sm)"/>
+                  <line x1="230" y1="265" x2="285" y2="230"
+                    stroke="#4A7EFF" strokeWidth={1} opacity={0.5}
+                    filter="url(#hero-glow-sm)"/>
+                </g>
+
+                {/* Cubo frontal izquierdo */}
+                <g opacity={0.7}>
+                  <polygon points="145,240 190,215 235,240 190,265"
+                    fill="#131628" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.5}/>
+                  <polygon points="145,240 145,285 190,310 190,265"
+                    fill="#090B18" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.2}/>
+                  <polygon points="190,265 235,240 235,285 190,310"
+                    fill="#0B0D1E" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.2}/>
+                </g>
+
+                {/* Cubo frontal derecho */}
+                <g opacity={0.7}>
+                  <polygon points="225,240 270,215 315,240 270,265"
+                    fill="#131628" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.5}/>
+                  <polygon points="225,240 225,285 270,310 270,265"
+                    fill="#090B18" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.2}/>
+                  <polygon points="270,265 315,240 315,285 270,310"
+                    fill="#0B0D1E" stroke="#4A7EFF" strokeWidth={0.8} strokeOpacity={0.2}/>
+                </g>
+
+                {/* Logo N */}
+                <g filter="url(#hero-glow-md)">
+                  <line x1="215" y1="195" x2="215" y2="155"
+                    stroke="#4A7EFF" strokeWidth={3} strokeLinecap="round" opacity={0.95}/>
+                  <line x1="215" y1="155" x2="245" y2="195"
+                    stroke="#4A7EFF" strokeWidth={3} strokeLinecap="round" opacity={0.95}/>
+                  <line x1="245" y1="155" x2="245" y2="195"
+                    stroke="#4A7EFF" strokeWidth={3} strokeLinecap="round" opacity={0.95}/>
+                </g>
+
+                {/* Plataforma base */}
+                <ellipse cx="230" cy="340" rx="160" ry="16"
+                  fill="none" stroke="#4A7EFF" strokeWidth={1.5} opacity={0.35}
+                  filter="url(#hero-glow-md)"/>
+                <ellipse cx="230" cy="340" rx="90" ry="8"
+                  fill="rgba(74,126,255,0.06)"/>
+
+                {/* Líneas circuito */}
+                <line x1="165" y1="250" x2="165" y2="270"
+                  stroke="#4A7EFF" strokeWidth={0.5} opacity={0.3}/>
+                <line x1="295" y1="250" x2="295" y2="270"
+                  stroke="#4A7EFF" strokeWidth={0.5} opacity={0.3}/>
+                <line x1="165" y1="270" x2="295" y2="270"
+                  stroke="#4A7EFF" strokeWidth={0.5} opacity={0.2}/>
+
+                {/* Partículas */}
+                {([
+                  [60,90,0.5],[390,80,0.4],[50,200,0.3],
+                  [410,200,0.45],[370,130,0.35],[80,300,0.25],
+                  [340,300,0.3],[420,320,0.2]
+                ] as [number,number,number][]).map(([x,y,o],i) => (
+                  <circle key={i} cx={x} cy={y} r={i%2===0?2:1.5}
+                    fill="#4A7EFF" opacity={o}
+                    filter="url(#hero-glow-sm)"/>
+                ))}
+
+                {/* Líneas scan */}
+                <line x1="100" y1="150" x2="360" y2="150"
+                  stroke="#4A7EFF" strokeWidth={0.3} opacity={0.15}/>
+                <line x1="100" y1="200" x2="360" y2="200"
+                  stroke="#4A7EFF" strokeWidth={0.3} opacity={0.1}/>
+                <line x1="100" y1="250" x2="360" y2="250"
+                  stroke="#4A7EFF" strokeWidth={0.3} opacity={0.08}/>
+              </svg>
+
               <div style={{
                 position: 'absolute',
-                bottom: '-8%',
+                bottom: '5%',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                width: 300,
-                height: 60,
+                width: 280,
+                height: 50,
                 borderRadius: '50%',
-                background: 'radial-gradient(ellipse, rgba(74,126,255,0.2) 0%, transparent 70%)',
+                background: 'radial-gradient(ellipse, rgba(74,126,255,0.18) 0%, transparent 70%)',
                 animation: 'nyro-glow-pulse 3s ease-in-out infinite',
                 pointerEvents: 'none',
-              }} />
+              }}/>
             </div>
           </div>
         </div>

@@ -1,15 +1,81 @@
 'use client';
-import Image from 'next/image';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { SERVICES } from '@/content/data';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 
-const SERVICE_IMAGES: Record<string, string> = {
-  Server: '/images/icon-infraestructura.png',
-  Database: '/images/icon-database.png',
-  Zap: '/images/icon-automatizacion.png',
-  TrendingUp: '/images/icon-analytics.png',
-};
+function ServiceIcon({ type }: { type: string }) {
+  const base = {
+    width: 64, height: 64,
+    background: 'rgba(74,126,255,0.06)',
+    border: '1px solid rgba(74,126,255,0.15)',
+    borderRadius: 12,
+    display: 'flex' as const,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+    marginBottom: '0.5rem',
+    flexShrink: 0 as const,
+  }
+  const icons: Record<string, React.ReactElement> = {
+    Server: (
+      <div style={base}>
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect x="3" y="5" width="22" height="7" rx="2"
+            stroke="#4A7EFF" strokeWidth="1.5" fill="rgba(74,126,255,0.08)"/>
+          <rect x="3" y="16" width="22" height="7" rx="2"
+            stroke="#4A7EFF" strokeWidth="1.5" fill="rgba(74,126,255,0.08)"/>
+          <circle cx="21" cy="8.5" r="1.5" fill="#4A7EFF" opacity="0.8"/>
+          <circle cx="21" cy="19.5" r="1.5" fill="#4A7EFF" opacity="0.8"/>
+          <line x1="7" y1="8.5" x2="16" y2="8.5"
+            stroke="#4A7EFF" strokeWidth="1.2" strokeLinecap="round" opacity="0.5"/>
+          <line x1="7" y1="19.5" x2="16" y2="19.5"
+            stroke="#4A7EFF" strokeWidth="1.2" strokeLinecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+    ),
+    Database: (
+      <div style={base}>
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <ellipse cx="14" cy="8" rx="9" ry="3.5"
+            stroke="#4A7EFF" strokeWidth="1.5" fill="rgba(74,126,255,0.1)"/>
+          <path d="M5 8v6c0 1.93 4.03 3.5 9 3.5s9-1.57 9-3.5V8"
+            stroke="#4A7EFF" strokeWidth="1.5" fill="none"/>
+          <path d="M5 14v6c0 1.93 4.03 3.5 9 3.5s9-1.57 9-3.5v-6"
+            stroke="#4A7EFF" strokeWidth="1.5" fill="none"/>
+        </svg>
+      </div>
+    ),
+    Zap: (
+      <div style={base}>
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <polygon points="16,4 8,16 14,16 12,24 20,12 14,12"
+            fill="rgba(74,126,255,0.15)" stroke="#4A7EFF" strokeWidth="1.5"
+            strokeLinejoin="round"/>
+          <circle cx="22" cy="6" r="3" fill="rgba(74,126,255,0.2)"
+            stroke="#4A7EFF" strokeWidth="1" opacity="0.6"/>
+          <circle cx="6" cy="22" r="2" fill="rgba(74,126,255,0.2)"
+            stroke="#4A7EFF" strokeWidth="1" opacity="0.4"/>
+        </svg>
+      </div>
+    ),
+    TrendingUp: (
+      <div style={base}>
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <polyline points="4,20 10,13 15,17 24,8"
+            stroke="#4A7EFF" strokeWidth="2" strokeLinecap="round"
+            strokeLinejoin="round" fill="none"/>
+          <polyline points="19,8 24,8 24,13"
+            stroke="#4A7EFF" strokeWidth="2" strokeLinecap="round"
+            strokeLinejoin="round" fill="none"/>
+          <path d="M4 20 Q14 14 24 8" fill="rgba(74,126,255,0.05)" stroke="none"/>
+          <rect x="4" y="21" width="20" height="1.5" rx="0.75"
+            fill="rgba(74,126,255,0.2)"/>
+        </svg>
+      </div>
+    ),
+  }
+  return icons[type] ?? icons['Server']
+}
 
 const CARD_VARIANTS = {
   hidden: { opacity: 0, y: 24 },
@@ -133,26 +199,7 @@ export function Services() {
                   </span>
 
                   {/* Icon */}
-                  <div style={{
-                    width: 72,
-                    height: 72,
-                    position: 'relative',
-                    marginBottom: '0.5rem',
-                  }}>
-                    <Image
-                      src={SERVICE_IMAGES[service.icon] ?? '/images/icon-infraestructura.png'}
-                      alt={service.title}
-                      width={72}
-                      height={72}
-                      style={{
-                        width: 72,
-                        height: 72,
-                        objectFit: 'contain',
-                        filter: 'drop-shadow(0 0 12px rgba(74,126,255,0.4))',
-                        mixBlendMode: 'lighten' as const,
-                      }}
-                    />
-                  </div>
+                  <ServiceIcon type={service.icon} />
 
                   {/* Title */}
                   <h3

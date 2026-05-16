@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import GlitchText from '@/components/motion/GlitchText';
+import MagneticButton from '@/components/motion/MagneticButton';
 import { HERO_STATS } from '@/content/data';
 import { WHATSAPP_LINKS } from '@/lib/whatsapp';
 
@@ -153,33 +155,25 @@ export function Hero() {
             </motion.div>
 
             {/* 2. H1 */}
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
-              style={{
-                fontFamily: 'var(--font-syne)',
-                fontSize: 'clamp(32px, 8vw, 64px)',
-                fontWeight: 800,
-                lineHeight: 1.08,
-                letterSpacing: '-0.03em',
-                color: '#EEF0FF',
-                margin: 0,
-                marginBottom: '1.5rem',
-              }}
             >
-              Tu empresa, digitalizada.<br />
-              Tu operación,{' '}
-              <em
-                style={{
-                  fontStyle: 'normal',
-                  color: '#4A7EFF',
-                  textShadow: '0 0 40px rgba(74,126,255,0.4)',
-                }}
-              >
-                automatizada.
-              </em>
-            </motion.h1>
+              <GlitchText as="h1" style={{
+                fontFamily: 'var(--font-syne)',
+                fontSize: 'clamp(36px, 5vw, 64px)',
+                fontWeight: 800, lineHeight: 1.08,
+                letterSpacing: '-0.03em', color: '#EEF0FF',
+                marginBottom: '1.5rem',
+              }}>
+                Tu operación,{' '}
+                <em style={{ fontStyle: 'normal', color: '#4A7EFF',
+                  textShadow: '0 0 40px rgba(74,126,255,0.4)' }}>
+                  sin caos.
+                </em>
+              </GlitchText>
+            </motion.div>
 
             {/* 3. Subtitle */}
             <motion.p
@@ -198,8 +192,8 @@ export function Hero() {
                 wordBreak: 'break-word',
               }}
             >
-              Construimos la infraestructura digital que tu empresa necesita
-              para conseguir más clientes y operar sin caos.
+              Reemplazamos Excel y WhatsApp con sistemas digitales
+              que trabajan solos, día y noche.
             </motion.p>
 
             {/* 4. Buttons */}
@@ -209,15 +203,20 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.4, ease: EASE }}
               style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', width: '100%' }}
             >
-              <a
-                href={WHATSAPP_LINKS.llamada}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nyro-btn-primary"
-                style={{ width: '100%', maxWidth: '320px', textAlign: 'center' as const, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              <MagneticButton
+                href="https://wa.me/573178051585?text=Hola%20NYRO%2C%20quiero%20digitalizar%20mi%20empresa."
               >
-                Quiero digitalizar mi empresa →
-              </a>
+                <button style={{
+                  background: '#4A7EFF', color: '#fff',
+                  border: '1px solid #4A7EFF', borderRadius: 8,
+                  padding: '12px 28px', fontSize: 15, fontWeight: 500,
+                  cursor: 'pointer', transition: 'all 0.25s',
+                  display: 'flex', alignItems: 'center', gap: 8,
+                  boxShadow: '0 0 30px rgba(74,126,255,0.2)',
+                }}>
+                  Digitaliza tu empresa ahora →
+                </button>
+              </MagneticButton>
               <a
                 href={WHATSAPP_LINKS.servicios}
                 target="_blank"

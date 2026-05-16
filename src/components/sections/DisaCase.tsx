@@ -1,0 +1,213 @@
+'use client'
+import { useRef, useEffect, useState } from 'react'
+import { motion, useInView } from 'framer-motion'
+
+const WHATSAPP_URL = 'https://wa.me/573178051585?text=Hola%20NYRO%2C%20quiero%20lo%20mismo%20que%20hicieron%20con%20DISA%20para%20mi%20empresa.'
+
+const PHASES = [
+  {
+    num: '01',
+    label: 'La situación inicial',
+    color: '#FF4444',
+    items: ['Excel con múltiples versiones sin control', 'Pedidos gestionados por WhatsApp', 'Clientes conseguidos solo por voz a voz', 'Cotizaciones manuales tardaban 2 horas'],
+  },
+  {
+    num: '02',
+    label: 'El diagnóstico NYRO',
+    color: '#F59E0B',
+    items: ['Mapeo completo de procesos operativos', 'Identificación de 4 cuellos de botella críticos', 'Diseño del sistema integrado', 'Plan de implementación en 3 semanas'],
+  },
+  {
+    num: '03',
+    label: 'Lo que construimos',
+    color: '#4A7EFF',
+    items: ['Web profesional con catálogo digital', 'Base de datos centralizada (clientes, productos, pedidos)', 'Sistema de cotización automático', 'Dashboard de métricas en tiempo real'],
+  },
+  {
+    num: '04',
+    label: 'El resultado',
+    color: '#22C55E',
+    items: ['0 errores manuales en cotizaciones', '100% de la operación digitalizada', 'Cotizaciones: de 2 horas a 3 minutos', 'Clientes atendidos con sistema, no WhatsApp'],
+  },
+]
+
+function CountUp({ end, duration = 1.5, suffix = '' }: { end: number; duration?: number; suffix?: string }) {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  useEffect(() => {
+    if (!isInView) return
+    let startTime: number
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp
+      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1)
+      setCount(Math.floor(progress * end))
+      if (progress < 1) requestAnimationFrame(step)
+    }
+    requestAnimationFrame(step)
+  }, [isInView, end, duration])
+
+  return <span ref={ref}>{count}{suffix}</span>
+}
+
+export default function DisaCase() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-60px' })
+
+  return (
+    <section ref={ref} style={{
+      padding: 'clamp(60px, 8vw, 100px) clamp(1.25rem, 4vw, 2rem)',
+      background: '#070810',
+    }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          style={{ marginBottom: '3rem' }}
+        >
+          <span style={{
+            fontFamily: 'var(--font-mono)', fontSize: 11,
+            color: '#4A7EFF', letterSpacing: '0.14em',
+            textTransform: 'uppercase', display: 'block', marginBottom: '0.75rem',
+          }}>Caso de éxito — DISA</span>
+          <h2 style={{
+            fontFamily: 'var(--font-syne)',
+            fontSize: 'clamp(26px, 3vw, 42px)',
+            fontWeight: 700, color: '#EEF0FF',
+            lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0,
+          }}>
+            De Excel y WhatsApp<br />
+            <span style={{ color: '#4A7EFF' }}>a sistema digital en 3 semanas.</span>
+          </h2>
+        </motion.div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gap: '1px',
+          background: 'rgba(255,255,255,0.06)',
+          border: '1px solid rgba(255,255,255,0.06)',
+          borderRadius: 16, overflow: 'hidden',
+          marginBottom: '3rem',
+        }}>
+          {PHASES.map((phase, i) => (
+            <motion.div
+              key={phase.num}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: i * 0.12, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                background: '#070810', padding: '2rem',
+                borderLeft: i > 0 ? `2px solid ${phase.color}20` : 'none',
+                position: 'relative',
+              }}
+            >
+              <div style={{
+                width: 4, height: '100%',
+                position: 'absolute', left: 0, top: 0, bottom: 0,
+                background: phase.color, opacity: 0.3,
+              }}/>
+              <span style={{
+                fontFamily: 'var(--font-mono)', fontSize: 11,
+                color: phase.color, letterSpacing: '0.1em', display: 'block',
+                marginBottom: '0.5rem',
+              }}>{phase.num}</span>
+              <h3 style={{
+                fontFamily: 'var(--font-syne)', fontSize: 16,
+                fontWeight: 700, color: '#EEF0FF',
+                marginBottom: '1rem',
+              }}>{phase.label}</h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0,
+                display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {phase.items.map((item) => (
+                  <li key={item} style={{
+                    display: 'flex', gap: 8, alignItems: 'flex-start',
+                  }}>
+                    <span style={{ color: phase.color, flexShrink: 0, fontSize: 12, marginTop: 2 }}>
+                      {i === 0 ? '×' : '→'}
+                    </span>
+                    <span style={{ fontSize: 13, color: '#7A84AA', lineHeight: 1.5 }}>
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Métricas con contador */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            background: '#0C0E1C',
+            border: '1px solid rgba(74,126,255,0.15)',
+            borderRadius: 16, padding: '2.5rem',
+            marginBottom: '2rem',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '2rem',
+          }}
+        >
+          {[
+            { value: 0, suffix: ' errores', label: 'errores manuales en cotizaciones' },
+            { value: 100, suffix: '%', label: 'operación digitalizada' },
+            { value: 3, suffix: ' min', label: 'tiempo de cotización (antes: 2h)' },
+          ].map((metric, i) => (
+            <div key={i} style={{ textAlign: 'center' }}>
+              <p style={{
+                fontFamily: 'var(--font-syne)', fontSize: 'clamp(32px, 5vw, 52px)',
+                fontWeight: 800, color: '#4A7EFF', margin: 0, lineHeight: 1,
+              }}>
+                <CountUp end={metric.value} suffix={metric.suffix} duration={1.8} />
+              </p>
+              <p style={{
+                fontSize: 13, color: '#7A84AA', margin: '8px 0 0',
+              }}>{metric.label}</p>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.65, duration: 0.5 }}
+          style={{ textAlign: 'center' }}
+        >
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: 10,
+              background: '#4A7EFF', color: '#fff',
+              borderRadius: 10, padding: '0.875rem 2rem',
+              fontSize: 15, fontWeight: 500,
+              textDecoration: 'none',
+              transition: 'all 0.25s',
+              boxShadow: '0 0 30px rgba(74,126,255,0.25)',
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLAnchorElement).style.background = '#7AA3FF'
+              ;(e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-2px)'
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLAnchorElement).style.background = '#4A7EFF'
+              ;(e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)'
+            }}
+          >
+            Quiero lo mismo para mi empresa →
+          </a>
+        </motion.div>
+
+      </div>
+    </section>
+  )
+}

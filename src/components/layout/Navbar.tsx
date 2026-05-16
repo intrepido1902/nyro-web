@@ -147,12 +147,13 @@ export function Navbar() {
             right: 0,
             bottom: 0,
             zIndex: 99,
-            background: 'rgba(7,8,16,0.97)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
+            background: 'rgba(7,8,16,0.98)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            borderBottom: '1px solid rgba(255,255,255,0.06)',
             display: 'flex',
             flexDirection: 'column',
-            padding: '2rem 1.5rem',
+            padding: '1.5rem',
             gap: '0.5rem',
           }}
         >

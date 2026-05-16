@@ -53,50 +53,16 @@ export default function RetainerSection() {
             fontFamily: 'var(--font-mono)', fontSize: 11,
             color: '#4A7EFF', letterSpacing: '0.14em',
             textTransform: 'uppercase', display: 'block', marginBottom: '0.75rem',
-          }}>Retainer mensual</span>
+          }}>Soporte continuo</span>
 
-          <div style={{
-            display: 'flex', alignItems: 'flex-end',
-            justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem',
+          <h2 style={{
+            fontFamily: 'var(--font-syne)',
+            fontSize: 'clamp(26px, 3vw, 42px)',
+            fontWeight: 700, color: '#EEF0FF',
+            lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0,
           }}>
-            <h2 style={{
-              fontFamily: 'var(--font-syne)',
-              fontSize: 'clamp(26px, 3vw, 42px)',
-              fontWeight: 700, color: '#EEF0FF',
-              lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0,
-            }}>
-              Software eterno.<br />Tu sistema evoluciona cada mes.
-            </h2>
-
-            <div style={{
-              background: 'rgba(74,126,255,0.06)',
-              border: '1px solid rgba(74,126,255,0.15)',
-              borderRadius: 12,
-              padding: '1rem 1.5rem',
-              textAlign: 'center',
-              flexShrink: 0,
-            }}>
-              <p style={{
-                fontFamily: 'var(--font-syne)',
-                fontSize: 16,
-                fontWeight: 700,
-                color: '#EEF0FF',
-                margin: 0,
-                marginBottom: 6,
-              }}>Retainer mensual</p>
-              <p style={{
-                fontFamily: 'var(--font-dm-sans)',
-                fontSize: 13,
-                color: '#7A84AA',
-                margin: 0,
-                maxWidth: 220,
-                lineHeight: 1.5,
-              }}>
-                Tu infraestructura evoluciona en cada ciclo.
-                Sin fricción, sin gestión adicional.
-              </p>
-            </div>
-          </div>
+            Software eterno.<br />Tu sistema evoluciona cada mes.
+          </h2>
         </motion.div>
 
         {/* Cards */}

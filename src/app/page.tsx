@@ -15,14 +15,23 @@ export default function Home() {
     <>
       <div id="inicio"><Hero /></div>
       <StackBar />
+      <div className="nyro-section-sep" />
       <ChaosToOrder />
+      <div className="nyro-section-sep" />
       <ProductShowcase />
+      <div className="nyro-section-sep" />
       <div id="servicios"><Services /></div>
+      <div className="nyro-section-sep" />
       <Process />
+      <div className="nyro-section-sep" />
       <div id="casos"><DisaCase /></div>
+      <div className="nyro-section-sep" />
       <RetainerSection />
+      <div className="nyro-section-sep" />
       <NosotrosPreview />
+      <div className="nyro-section-sep" />
       <BlogPreview />
+      <div className="nyro-section-sep" />
       <div id="contacto"><CtaSection /></div>
     </>
   )

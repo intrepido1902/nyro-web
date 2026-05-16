@@ -121,7 +121,7 @@ export function Services() {
                 margin: 0,
               }}
             >
-              Tres pilares de infraestructura.<br />Un ecosistema operacional.
+              Infraestructura operacional completa.<br />Un ecosistema autónomo.
             </h2>
           </div>
           <p
@@ -138,12 +138,12 @@ export function Services() {
           </p>
         </div>
 
-        {/* 3-col grid with stagger */}
+        {/* 2×2 grid with stagger */}
         <StaggerContainer
           className="nyro-services-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateColumns: 'repeat(2, 1fr)',
             gap: '1px',
             background: 'rgba(255,255,255,0.06)',
             border: '1px solid rgba(255,255,255,0.06)',

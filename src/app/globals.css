@@ -111,6 +111,11 @@ h2, .nyro-h2 {
   pointer-events: none;
 }
 
+/* ── Services grid — 2x2 desktop, 1-col mobile ── */
+.nyro-services-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
 /* ── Mobile responsive ── */
 @media (max-width: 768px) {
   .nyro-services-grid {
@@ -250,4 +255,17 @@ a.nyro-link:hover {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ── Espaciado entre secciones ── */
+.nyro-section-pad {
+  padding-top: clamp(80px, 10vw, 140px);
+  padding-bottom: clamp(80px, 10vw, 140px);
+}
+
+/* Separador suave entre secciones */
+.nyro-section-sep {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(74,126,255,0.08) 30%, rgba(74,126,255,0.08) 70%, transparent 100%);
+  margin: 0;
 }

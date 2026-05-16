@@ -133,7 +133,7 @@ export function Hero() {
           }}
         >
           {/* ── Left column ── */}
-          <div style={{ overflow: 'hidden', width: '100%' }}>
+          <div style={{ overflow: 'hidden', width: '100%', minWidth: 0 }}>
             {/* 1. Label */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -162,10 +162,12 @@ export function Hero() {
             >
               <GlitchText as="h1" style={{
                 fontFamily: 'var(--font-syne)',
-                fontSize: 'clamp(36px, 5vw, 64px)',
+                fontSize: 'clamp(32px, 4vw, 56px)',
                 fontWeight: 800, lineHeight: 1.08,
                 letterSpacing: '-0.03em', color: '#EEF0FF',
                 marginBottom: '1.5rem',
+                wordBreak: 'keep-all',
+                overflowWrap: 'break-word',
               }}>
                 Infraestructura digital<br />
                 <em style={{ fontStyle: 'normal', color: '#4A7EFF',
@@ -286,43 +288,23 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5, ease: EASE }}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.5rem',
-                marginTop: '1.5rem',
-              }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span
-                  className="nyro-dot-pulse"
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: '50%',
-                    background: '#22C55E',
-                    display: 'inline-block',
-                    flexShrink: 0,
-                  }}
-                />
-                <span
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: 11,
-                    color: '#3D4460',
-                    whiteSpace: 'normal' as const,
-                    wordBreak: 'break-word' as const,
-                  }}
-                >
+              <div style={{
+                display: 'flex', alignItems: 'center',
+                gap: 8, marginTop: '1.5rem',
+              }}>
+                <div style={{
+                  width: 6, height: 6, borderRadius: '50%',
+                  background: '#22C55E', flexShrink: 0,
+                  boxShadow: '0 0 6px rgba(34,197,94,0.6)',
+                }}/>
+                <span style={{
+                  fontSize: 13, color: '#7A84AA',
+                  fontFamily: 'var(--font-dm-sans)',
+                }}>
                   Operamos en Colombia · LATAM
                 </span>
               </div>
-              <span style={{
-                fontFamily: 'var(--font-mono)', fontSize: 11,
-                color: '#3D4460', letterSpacing: '0.06em',
-              }}>
-                Respondemos en menos de 2 horas hábiles
-              </span>
             </motion.div>
           </div>
 
